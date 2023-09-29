@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-//ref link:
+//ref link:https://www.youtube.com/watch?v=9YjfsXQtHIg&list=PLRwVmtr-pp06rfSgNYu_oBg40DkwXiRHt&index=24
 // GAC - GLOBAL Assembly Cache
 
 // SH Fusion.DLL - for knowledge in assembly files plugin in GAC
