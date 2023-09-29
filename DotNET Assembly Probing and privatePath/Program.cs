@@ -599,10 +599,10 @@ C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>dir
                6 File(s)         35,255 bytes
                5 Dir(s)  487,659,614,208 bytes free
 
-C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly ProbingProgram.exe
+C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>Program.exe
 Kulpots moooooooooooo version 1
 
-C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probingren Farm.dll Farm.exe
+C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>ren Farm.dll Farm.exe
 
 C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>dir
  Volume in drive C has no label.
@@ -958,6 +958,80 @@ C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>dir
                5 File(s)         46,884 bytes
                6 Dir(s)  487,658,455,040 bytes free
 
+---------------------------------------------------------------------------------------
+----------------------------DotNET Assembly Probing and privatePath---------------------START
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>sn -k KulpotKey.snk
+
+Microsoft (R) .NET Framework Strong Name Utility  Version 4.0.30319.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Key pair written to KulpotKey.snk
+
+-----------CREATED-------------------
+[assembly: AssemblyVersion("1.0.0.0")]
+
+public class Cow
+{
+    public static void Moo()
+    {
+        Console.WriteLine("Moooooooooooooooooo version 1");
+    }
+}
+----------------------------------------
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>csc /t:library /out:Farm.dll /keyfile:KulpotKey.snk Program.cs
+Microsoft (R) Visual C# Compiler version 4.7.0-3.23416.8 (43b0b05c)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath
+
+30/09/2023  06:56 am    <DIR>          .
+30/09/2023  06:56 am    <DIR>          ..
+30/09/2023  06:45 am               189 App.config
+30/09/2023  06:45 am    <DIR>          bin
+30/09/2023  06:46 am             2,428 DotNET Assembly Probing and privatePath.csproj
+30/09/2023  06:56 am             4,096 Farm.dll
+30/09/2023  06:53 am               596 KulpotKey.snk
+30/09/2023  06:45 am    <DIR>          obj
+30/09/2023  06:54 am            40,249 Program.cs
+30/09/2023  06:49 am    <DIR>          Properties
+               5 File(s)         47,558 bytes
+               5 Dir(s)  486,988,980,224 bytes free
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>csc /r:Farm.dll Program.cs
+Microsoft (R) Visual C# Compiler version 4.7.0-3.23416.8 (43b0b05c)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath
+
+30/09/2023  06:59 am    <DIR>          .
+30/09/2023  06:59 am    <DIR>          ..
+30/09/2023  06:45 am               189 App.config
+30/09/2023  06:45 am    <DIR>          bin
+30/09/2023  06:46 am             2,428 DotNET Assembly Probing and privatePath.csproj
+30/09/2023  06:56 am             4,096 Farm.dll
+30/09/2023  06:53 am               596 KulpotKey.snk
+30/09/2023  06:45 am    <DIR>          obj
+30/09/2023  06:59 am            42,304 Program.cs
+30/09/2023  06:58 am             4,096 Program.exe
+30/09/2023  06:49 am    <DIR>          Properties
+               6 File(s)         53,709 bytes
+               5 Dir(s)  486,986,952,704 bytes free
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>Program.exe
+Moooooooooooooooooo version 1
+
+
 
 
 
@@ -967,7 +1041,7 @@ C:\Users\sunny\source\repos\DotNet Assembly Probing\DotNet Assembly Probing>dir
  */
 
 
-[assembly: AssemblyVersion("1.0.0.0")]
+//[assembly: AssemblyVersion("1.0.0.0")]
 
 //public class Cow
 //{
@@ -985,23 +1059,3 @@ class MainClass
     }
 }
 
-//class MainClass
-//{
-//    static void Main()
-//    {
-//        Cow.Moo();
-//        Cow.Moo();
-//        Cow.Moo();
-//        Cow.Moo();
-//        Cow.Moo();
-//        Cow.Moo();
-//    }
-//}
-
-//public class Cow
-//{
-//    public static void Moo()
-//    {
-//        Console.WriteLine("Kulpots moooooooooooo version 1");
-//    }
-//}
