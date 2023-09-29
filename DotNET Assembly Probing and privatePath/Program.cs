@@ -1031,6 +1031,52 @@ C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assem
 C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>Program.exe
 Moooooooooooooooooo version 1
 
+-------------Make and Move Files to Directory--------
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>md MeAssemblies
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>move Farm.dll MeAssemblies
+        1 file(s) moved.
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath
+
+30/09/2023  07:05 am    <DIR>          .
+30/09/2023  07:05 am    <DIR>          ..
+30/09/2023  06:45 am               189 App.config
+30/09/2023  06:45 am    <DIR>          bin
+30/09/2023  06:46 am             2,428 DotNET Assembly Probing and privatePath.csproj
+30/09/2023  06:53 am               596 KulpotKey.snk
+30/09/2023  07:05 am    <DIR>          MeAssemblies
+30/09/2023  06:45 am    <DIR>          obj
+30/09/2023  07:05 am            43,440 Program.cs
+30/09/2023  06:58 am             4,096 Program.exe
+30/09/2023  06:49 am    <DIR>          Properties
+               5 File(s)         50,749 bytes
+               6 Dir(s)  486,997,000,192 bytes free
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>Program.exe
+-----ERROR: Farm is inside MeAssemblies <DIR>--------------------
+Unhandled Exception: System.IO.FileNotFoundException: Could not load file or assembly 'Farm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d9ae9abd90506f0e' or one of its dependencies. The system cannot find the file specified.
+   at MainClass.Main()
+
+----------Create-CONFIG FILES----------------------
+create -> txt file(name: Program.exe.config) in -> path:C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath -> drag then drop file to VS ->
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<probing privatePath="MeAssemblies" />
+		</assemblyBinding>
+	</runtime>
+</configuration>
+
+-------------------------------------------------
+
+
 
 
 
@@ -1041,21 +1087,21 @@ Moooooooooooooooooo version 1
  */
 
 
-//[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
 
-//public class Cow
-//{
-//    public static void Moo()
-//    {
-//        Console.WriteLine("Moooooooooooooooooo version 1");
-//    }
-//}
-
-class MainClass
+public class Cow
 {
-    static void Main()
+    public static void Moo()
     {
-        Cow.Moo();
+        Console.WriteLine("Moooooooooooooooooo version 1");
     }
 }
+
+//class MainClass
+//{
+//    static void Main()
+//    {
+//        Cow.Moo();
+//    }
+//}
 
