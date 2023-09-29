@@ -1075,10 +1075,74 @@ create -> txt file(name: Program.exe.config) in -> path:C:\Users\sunny\source\re
 </configuration>
 
 -------------------------------------------------
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
 
+ Directory of C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath
 
+30/09/2023  07:20 am    <DIR>          .
+30/09/2023  07:20 am    <DIR>          ..
+30/09/2023  06:45 am               189 App.config
+30/09/2023  06:45 am    <DIR>          bin
+30/09/2023  06:46 am             2,428 DotNET Assembly Probing and privatePath.csproj
+30/09/2023  06:53 am               596 KulpotKey.snk
+30/09/2023  07:05 am    <DIR>          MeAssemblies
+30/09/2023  06:45 am    <DIR>          obj
+30/09/2023  07:20 am            45,753 Program.cs
+30/09/2023  06:58 am             4,096 Program.exe
+30/09/2023  07:18 am               226 Program.exe.config.txt
+30/09/2023  06:49 am    <DIR>          Properties
+               6 File(s)         53,288 bytes
+               6 Dir(s)  486,987,264,000 bytes free
 
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>Program.exe
+----------still error-----------
+Unhandled Exception: System.IO.FileNotFoundException: Could not load file or assembly 'Farm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d9ae9abd90506f0e' or one of its dependencies. The system cannot find the file specified.
+   at MainClass.Main()
 
+-------------replace------app.config to Program.exe.config---------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+</configuration>
+------------paste with this----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<probing privatePath="MeAssemblies" /> 
+		</assemblyBinding>
+	</runtime>
+</configuration>
+----------------------------------------------------
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DAE4-938D
+
+ Directory of C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath
+
+30/09/2023  07:27 am    <DIR>          .
+30/09/2023  07:27 am    <DIR>          ..
+30/09/2023  06:45 am    <DIR>          bin
+30/09/2023  06:46 am             2,428 DotNET Assembly Probing and privatePath.csproj
+30/09/2023  06:53 am               596 KulpotKey.snk
+30/09/2023  07:05 am    <DIR>          MeAssemblies
+30/09/2023  06:45 am    <DIR>          obj
+30/09/2023  07:26 am            46,986 Program.cs
+30/09/2023  06:58 am             4,096 Program.exe
+30/09/2023  07:27 am               229 Program.exe.config
+30/09/2023  07:26 am               226 Program.exe.config.txt
+30/09/2023  06:49 am    <DIR>          Properties
+               6 File(s)         54,561 bytes
+               6 Dir(s)  486,996,733,952 bytes free
+
+C:\Users\sunny\source\repos\DotNET Assembly Probing and privatePath\DotNET Assembly Probing and privatePath>Program.exe
+Moooooooooooooooooo version 1
+---------------Now <DIR>MeAssemblies found---------------
 
 
 
